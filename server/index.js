@@ -8,7 +8,6 @@ const cookieParser = require("cookie-parser");
 const authRoute = require("./routes/AuthRoute");
 const mongoose = require("mongoose");
 const { MongoClient } = require("mongodb");
-// const bodyParser = require("body-parser");
 
 async function connectToDatabase() {
   try {
@@ -19,7 +18,7 @@ async function connectToDatabase() {
 
     console.log("Connected to the database");
 
-    // Now that you're connected, you can start your Express app
+    // Set up middleware with larger request body size limit
     app.use(
       cors({
         origin: "http://localhost:3000", // Allow requests from your React app
@@ -27,9 +26,12 @@ async function connectToDatabase() {
       })
     );
     app.use(cookieParser());
-    app.use(express.json());
-    // app.use(bodyParser.urlencoded({ extended: true }));
+    
+    // Increase body size limit to 10MB (adjust as needed)
+    app.use(express.json({ limit: '10mb' }));  // Increase the limit for JSON payloads
+    app.use(express.urlencoded({ limit: '10mb', extended: true }));  // Increase the limit for URL-encoded data
 
+    // Add routes
     app.use("/users", require("./routes/userRoutes"));
     app.use("/projects", require("./routes/projectRoutes"));
     app.use("/contributions", require("./routes/ContributionsRoutes"));
