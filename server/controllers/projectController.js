@@ -44,8 +44,41 @@ const getProjectById = asyncHandler(async (req, res) => {
     }
   });  
 
+  // Controller function to add a comment
+const addProject = async (req, res) => {
+  try {
+    const { projectTitle, description, githubRepoUrl, languages, image, username } = req.body;
+
+    // Perform any validation or checks needed
+    if (!projectTitle || !username || !description || !githubRepoUrl || !languages || !image) {
+      return res.status(400).json({ message: 'Missing required fields' });
+    }
+
+    // Create a new project
+    const project = new Project({
+      projectTitle, description, githubRepoUrl, languages, image, username
+    });
+
+    // Save the project to the database
+    await project.save();
+
+    // Respond with a success message and the created project
+    res.status(201).json({
+      message: 'Project added successfully',
+      success: true,
+      project,
+    });
+
+  } catch (error) {
+    console.error(error);
+    // Handle any errors and respond with an error message
+    res.status(500).json({ error: 'Failed to add comment' });
+  }
+};
+
 module.exports = {
   getAllProjects,
   getProjectById,
   getLanguages,
+  addProject
 };

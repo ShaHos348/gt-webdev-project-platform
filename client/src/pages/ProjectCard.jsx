@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 
 const ProjectCard = ({ project }) => {
-  const { _id, projectTitle, description, imageUrl } = project;
+  const { _id, projectTitle, description, image } = project;
   const navigate = useNavigate();
   const handleLearnMoreClick = () => {
     navigate(`/projects/${project._id}`);
@@ -17,7 +17,7 @@ const ProjectCard = ({ project }) => {
     <Card sx={{ maxWidth: 345, flexBasis: 500 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image= {imageUrl}
+        image= {image}
         title="Project 1"
       />
       <CardContent>

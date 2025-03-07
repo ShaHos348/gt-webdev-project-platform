@@ -112,7 +112,7 @@ const IndividualProject = () => {
         </div>
         <div className="content-left">
           <img
-            src={project.imageUrl}
+            src={project.image}
             alt={project.projectTitle}
             width={100}
             height={100}

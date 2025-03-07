@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Dashboard {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .Dashboard h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .Dashboard a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .Dashboard a:hover {
+    background-color: #0056b3;
+  }
+  
+  #add-project-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 50%;
+    text-align: center;
+    margin: 20px auto
+  }
+  
+  #add-project-form h2 {
+    margin-bottom: 15px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  button {
+    margin-top: 15px;
+  }
