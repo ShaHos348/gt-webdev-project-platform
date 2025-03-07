@@ -106,7 +106,7 @@ const IndividualProject = () => {
       <div className="project-content">
         <div className="content-right">
           <Contributors
-            repoUrl={"https://github.com/nimitadesh/gt-webdev-project-platform"}
+            repoUrl={project.githubRepoUrl}
           />
           <ProgrammingLanguages repoName={input} />
         </div>

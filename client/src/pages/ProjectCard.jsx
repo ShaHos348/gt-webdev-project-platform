@@ -19,7 +19,6 @@ const ProjectCard = ({ project }) => {
         sx={{ height: 140 }}
         image= {imageUrl}
         title="Project 1"
-        projectId={_id}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

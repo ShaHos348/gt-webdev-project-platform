@@ -38,9 +38,10 @@ export default function SignUp() {
     lastName: "",
     username: "",
     password: "",
+    github: "",
     roles: [],
   });
-  const { firstName, lastName, username, password, roles } = inputValue;
+  const { firstName, lastName, username, password, github, roles } = inputValue;
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -105,6 +106,7 @@ export default function SignUp() {
         lastName: "",
         username: "",
         password: "",
+        github: "",
         roles: [],
       });
     };
@@ -178,6 +180,17 @@ export default function SignUp() {
                 value={password}
                 onChange={handleOnChange}
               />    
+              </Grid>
+              <Grid item xs={12}>
+              <TextField
+                fullWidth
+                id="github"
+                label="Github"
+                name="github"
+                autoComplete="github"
+                value={github}
+                onChange={handleOnChange}
+              />
               </Grid>
             </Grid>
             <Divider sx={{ mt: 2, mb: 2 }} />
