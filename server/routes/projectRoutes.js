@@ -4,6 +4,7 @@ const projectsController = require("../controllers/ProjectController");
 
 router
   .get("/", projectsController.getAllProjects)
-  .get("/:projectId", projectsController.getProjectById);
+  .get("/:projectId", projectsController.getProjectById)
+  .post("/addProject",projectsController.addProject);
 
 module.exports = router;
